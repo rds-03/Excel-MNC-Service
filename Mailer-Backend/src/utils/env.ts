@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import logger from './logger';
-dotenv.config();
+dotenv.config({ path: '../.env' });
 
 type IEnv = {
   PORT: number;
