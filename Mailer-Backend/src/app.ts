@@ -5,6 +5,7 @@ import cors from 'cors';
 import logger from './utils/logger';
 import { pingRouter } from './routes/ping';
 import { templateRouter } from './routes/template';
+import { emailRouter } from './routes/email'
 import { ENV, initEnv } from './utils/env';
 
 /**
@@ -47,6 +48,7 @@ app.use(
 
 app.use('/ping', pingRouter);
 app.use('/template', templateRouter);
+app.use('/email', emailRouter);
 
 app.listen(ENV.PORT, async () => {
 	console.log(`[server]: Server is running at http://localhost:${ENV.PORT}`);
