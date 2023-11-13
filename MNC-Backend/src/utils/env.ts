@@ -26,7 +26,7 @@ export function initEnv() {
 		ENV.PORT = parseInt(process.env.PORT);
 	} else {
 		logger.info(
-			`No PORT specified in .env, using default ${process.env.PORT}`
+			`No PORT specified in .env, using default ${ENV.PORT}`
 		);
 	}
 

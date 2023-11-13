@@ -5,13 +5,15 @@ import cors from 'cors';
 import logger from './utils/logger';
 import { pingRouter } from './routes/ping';
 import { templateRouter } from './routes/template';
-import { emailRouter } from './routes/email'
+import { emailRouter } from './routes/email';
 import { ENV, initEnv } from './utils/env';
+import { initSesClient } from './utils/mailClient';
 
 /**
  * Envs must be used after calling initEnv()
  */
 initEnv();
+initSesClient();
 
 const app: Express = express();
 
