@@ -9,6 +9,7 @@ import { emailRouter } from './routes/email';
 import { ENV, initEnv } from './utils/env';
 import { initSesClient } from './utils/mailClient';
 
+import { certificateRouter} from './routes/certificate';
 /**
  * Envs must be used after calling initEnv()
  */
@@ -51,6 +52,8 @@ app.use(
 app.use('/ping', pingRouter);
 app.use('/template', templateRouter);
 app.use('/email', emailRouter);
+app.use('/certificate',certificateRouter)
+
 
 app.listen(ENV.PORT, async () => {
 	console.log(`[server]: Server is running at http://localhost:${ENV.PORT}`);
